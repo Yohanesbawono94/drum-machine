@@ -1,20 +1,104 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      power: true,
+      display: 'ON',
+      currentSounds: clipsOne,
+      currentSoundsId: 'Sound One',
+      slider: 0.5
+    }
+    this.powerControl= this.powerControl.bind(this);
+    this.showDisplay = this.showDisplay.bind(this);
+    this.adjustVol = this.adjustVol.bind(this);
+    this.selectSounds = this.selectSounds.bind(this);
+    this.clearDisplay = this.clearDisplay.bind(this);
+  }
+  
+  powerControl() {
+    this.setState({
+      power: !this.state.power,
+      display: !this.state.power ? 'ON' : 'OFF'
+    });
+  }
+  
+  showDisplay(name) {
+    if (this.state.power) {
+      this.setState ({
+      display: name
+      });
+    }
+  }
+  
+  selectSounds() {
+    if (this.state.power) {
+      this.state.currentSoundsId === 'Sound One' ?
+        this.setState({
+        currentSounds: clipsTwo,
+        currentSoundsId: 'Sound Two',
+        display: 'Sound Two'
+      }) :
+        this.setState({
+        currentSounds: clipsOne,
+        currentSoundsId: 'Sound One',
+        display: 'Sound One'
+      });
+    }
+  }
+  
+  clearDisplay() {
+    this.setState({
+      display: ''
+    })
+  }
+  
+  adjustVol(e) {
+    if (this.state.power) {
+      this.setState({
+        slider: e.target.value,
+        display: 'volume: ' + Math.round(e.target.value * 100) + '%'
+      });
+      setTimeOut( () => this.clearDisplay(), 2000 );
+    }
+  }
+  
+  render () {
+    const powerStyle = this.state.power ? {border: '2px solid #5FD9E2', color: '#5FD9E2'} : {border: '2px solid #F90505', color: '#F90505'};
+    
+    const soundStyle = this.state.currentSounds === clipsOne ? {float: 'right'} : {float: 'left'};
+    
+    {
+      document.querySelectorAll('.sound').forEach( sound => {
+        sound.volume = this.state.slider
+      });
+    }
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id='drum-machine'>
+        <AllDrumPads
+          power={this.state.power}
+          currentSounds={this.state.currentSounds}
+          showDisplay={this.showDisplay}
+          soundVolume={this.state.slider}
+          />
+        <div className='controller'>
+          <Power 
+            powerControl={this.powerControl}
+            style={powerStyle}
+            />
+          <Display 
+            display={this.state.display} />
+          <SoundsToggle 
+            selectSounds={this.selectSounds}
+            style={soundStyle} />
+          <Volume 
+            slider={this.state.slider}
+            adjustVol={this.adjustVol}/>
+       </div>
       </div>
-    );
+    )
   }
 }
 
