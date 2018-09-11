@@ -1,5 +1,13 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  background-color: #FFF;
+  overflow: hidden;
+  font-family: impact, charcoal, sans-serif;
+}
+  
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
 }
