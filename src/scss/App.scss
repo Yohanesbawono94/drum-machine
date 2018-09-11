@@ -1,0 +1,110 @@
+#drum-machine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    background: #090909;
+    border-radius: 6px;
+    //pads container
+    .alldrumpads-container {
+      height: 100%;
+      width: 70%;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-gap: 0.5rem;
+       .drum-pad {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 80px;
+          width: 120px;
+          border-radius: 5px;
+      }
+      #Q {
+        background: #ECEC2C;
+      }
+      #W {
+        background: #2ADB5F;
+      }
+      #E{
+        background: #D260B4;
+      }
+      #A {
+        background: #52C0BC;
+      }
+      #S {
+        background: #E38F64;
+      }
+      #D {
+        background: #4372E1;
+      }
+      #Z {
+        background: #48BC2B;
+      }
+      #X {
+        background: #DB472A;
+      }
+      #C {
+        background: #D0E547;
+      }
+    }
+    //controller container
+    .controller {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 30%;
+      .power-container {
+        .power-btn {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background: black;
+          color: #5FD9E2;
+          border: 2px solid #5FD9E2;
+          cursor: pointer;
+        }
+      }
+      .display-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 130px;
+        height: 50px;
+        margin-top: 1em;
+        border-radius: 5px;
+        background: #CEDEAB;
+      }
+      .soundstoggle-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+        .toggle-sounds {
+          width: 50px;
+          height: 20px;
+          border-radius: 5px;
+          background: #CEDEAB;
+          .sounds-slider {
+            width: 50%;
+            height: 100%;
+            border-radius: 5px;
+            background: #3D433F;
+            cursor: pointer;
+          }
+        }
+      }
+      .volume-container {
+        margin-top: 1em;
+        input {
+          width: 85%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  

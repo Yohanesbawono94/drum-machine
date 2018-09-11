@@ -1,28 +1,85 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+#drum-machine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  background: #090909;
+  border-radius: 6px; }
+  #drum-machine .alldrumpads-container {
+    height: 100%;
+    width: 70%;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 0.5rem; }
+    #drum-machine .alldrumpads-container .drum-pad {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      width: 120px;
+      border-radius: 5px; }
+    #drum-machine .alldrumpads-container #Q {
+      background: #ECEC2C; }
+    #drum-machine .alldrumpads-container #W {
+      background: #2ADB5F; }
+    #drum-machine .alldrumpads-container #E {
+      background: #D260B4; }
+    #drum-machine .alldrumpads-container #A {
+      background: #52C0BC; }
+    #drum-machine .alldrumpads-container #S {
+      background: #E38F64; }
+    #drum-machine .alldrumpads-container #D {
+      background: #4372E1; }
+    #drum-machine .alldrumpads-container #Z {
+      background: #48BC2B; }
+    #drum-machine .alldrumpads-container #X {
+      background: #DB472A; }
+    #drum-machine .alldrumpads-container #C {
+      background: #D0E547; }
+  #drum-machine .controller {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 30%; }
+    #drum-machine .controller .power-container .power-btn {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: black;
+      color: #5FD9E2;
+      border: 2px solid #5FD9E2;
+      cursor: pointer; }
+    #drum-machine .controller .display-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 130px;
+      height: 50px;
+      margin-top: 1em;
+      border-radius: 5px;
+      background: #CEDEAB; }
+    #drum-machine .controller .soundstoggle-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem; }
+      #drum-machine .controller .soundstoggle-container .toggle-sounds {
+        width: 50px;
+        height: 20px;
+        border-radius: 5px;
+        background: #CEDEAB; }
+        #drum-machine .controller .soundstoggle-container .toggle-sounds .sounds-slider {
+          width: 50%;
+          height: 100%;
+          border-radius: 5px;
+          background: #3D433F;
+          cursor: pointer; }
+    #drum-machine .controller .volume-container {
+      margin-top: 1em; }
+      #drum-machine .controller .volume-container input {
+        width: 85%;
+        cursor: pointer; }
