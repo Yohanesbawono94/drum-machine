@@ -39,6 +39,6 @@ import DrumPad from './DrumPad';
         </div>
       )
     }
-  }
+  };
 
   export default AllDrumPads;
