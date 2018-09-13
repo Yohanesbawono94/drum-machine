@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import { clipsOne, clipsTwo } from './clips.js';
-import { AllDrumPads } from './AllDrumPads.js';
-import { Power } from './Power.js';
-import { Display } from './Display.js';
-import { SoundsToggle } from './SoundsToggle.js';
-import { Volume } from './Volume';
+import AllDrumPads from './AllDrumPads';
+import Power from './Power';
+import Display from './Display';
+import SoundsToggle from './SoundsToggle';
+import Volume from './Volume';
 
 class App extends Component {
   constructor(props) {
