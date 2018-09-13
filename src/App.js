@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 import { clipsOne, clipsTwo } from './clips.js';
 
 class App extends Component {
