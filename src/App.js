@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import { clipsOne, clipsTwo } from './clips.js';
-import { Drumpad, AllDrumPads } from './Drumpads.js';
+import { AllDrumPads } from './AllDrumPads.js';
 import { Power } from './Power.js';
 import { Display } from './Display.js';
 import { SoundsToggle } from './SoundsToggle.js';
