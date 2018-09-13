@@ -67,7 +67,6 @@ class App extends Component {
         slider: e.target.value,
         display: 'volume: ' + Math.round(e.target.value * 100) + '%'
       });
-      setTimeOut( () => this.clearDisplay(), 2000 );
     }
   }
   
