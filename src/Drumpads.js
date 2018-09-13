@@ -80,4 +80,5 @@ class DrumPad extends Component {
     }
   }
 
+  export default DrumPad;
   export default AllDrumPads;
