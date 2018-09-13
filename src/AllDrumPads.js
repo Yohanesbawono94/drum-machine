@@ -41,5 +41,4 @@ import DrumPad from './DrumPad';
     }
   }
 
-  export default DrumPad;
   export default AllDrumPads;
