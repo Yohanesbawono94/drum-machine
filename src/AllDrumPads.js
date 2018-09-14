@@ -3,9 +3,6 @@ import './css/App.css';
 import DrumPad from './DrumPad';
 
   class AllDrumPads extends Component {
-    constructor(props) {
-      super(props);
-    }
     render () {
       let pads;
       this.props.power ?
